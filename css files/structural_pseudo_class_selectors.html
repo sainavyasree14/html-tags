@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li:first-child{
+            color:aliceblue;
+            background-color: plum;
+
+        }
+        button:first-of-type{
+            background-color: bisque;
+
+        }
+        li:last-child{
+            background-color: lavender;
+        }
+        button:last-of-type{
+            background-color:lightcyan;
+        }
+        button:nth-child(3){
+            background-color: darksalmon;
+        }
+        button:nth-child(4){
+            background-color:honeydew;
+        }
+        button:nth-child(5){
+            background-color:lavenderblush;
+        }
+        li:nth-child(even){
+            background-color: lightsalmon;
+        }
+        li:nth-child(odd){
+            background-color:salmon;
+        }
+        li:nth-child(2), li:nth-child(4){
+            background-color: plum;
+            margin:50px;
+            text-align: center;
+            width:200px;
+            font-size:30px;
+        }
+        a:visited{
+            color:green ;
+         }
+         a:active{
+            color: purple;
+            font-size: 25px;
+         }
+         input:focus{
+            background-color: lavenderblush;
+            color:purple;
+            font-style: italic;
+            font-family: monospace;
+            font-weight: 10px;
+         }
+         div:hover{
+            background-color: lightblue;
+
+         }
+         a:hover{
+            font-style: italic;
+            text-decoration: underline double 5px;
+         }
+    </style>
+</head>
+<body>
+
+    <input type="search" placeholder="search">
+    <h4>
+        <a href="https://www.youtube.com">click here to open yt</a><br><br>
+        <a href="https://www.youtube.com/results?search_query=amsham+song">click here to open amsham</a>
+    </h4>
+    <ol>
+        <li>list-items</li>
+        <li>list-items</li>
+        <li>list-items</li>
+        <li>list-items</li>
+        <li>list-items</li>
+    </ol>
+    <div>
+        <span>span tag</span>
+        <button>button-1</button>
+        <button>button-2</button>
+        <button>button-3</button>
+        <button>button-4</button>
+        <button>button-5</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinator lists</title>
+    <style>/*adjacent sibling selector used to select direct adajacent elements*/
+        ol+h1{
+            color:darkslategrey;
+            background-color: bisque;
+            width:400px;
+            margin:0px;
+            
+        }
+
+        ul 
+        p{
+            color: purple;
+            background-color:burlywood;
+        }
+        /*child selector*/
+        h4>p{
+            background-color: lightblue;
+
+        }
+        ol>li{
+            background-color:darkkhaki;
+            margin: 10px;
+            width:250px;
+        }
+            /* descendent selector is used to target direct child elements*/
+            ul p{
+                background-color: magenta;
+            }
+            ol~h1{
+                background-color:burlywood;
+            }
+            body>h1:first-child{
+                background-color: antiquewhite;
+            }
+
+    </style>
+</head>
+<body>
+    <h1>Ordered list</h1>
+    <ol>
+        <li>list-1</li>
+        <li>list-2</li>
+        <li>list-3</li>
+        <li>list-4</li>
+    </ol>
+    <h1>Unordered list</h1>
+    <ul>
+        <li><h4>this is the paragraph present in unordered list</h4></li>
+        <li>unordered list-2</li>
+        <li>unordered list-3</li>
+        <li>unordered list-4</li>
+    </ul>
+    <h1>Heading in 3rd position</h1>
+    <h3>
+       <h4><p>heading 4</p></h4>
+    </h3>
+</body>
+</html>
