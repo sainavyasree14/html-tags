@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registeration Form</title>
+</head>
+<body>
+    <form action="" onsubmit="return checkPassword()">
+        <fieldset>
+            <h2>REGISTERATION FORM</h2>
+            <label for="fullname">FULL NAME:</label>
+            <input type="text" id="fullname" maxlength="9" minlength="5" required placeholder="enter your full name"><br><br>
+            <label for="email">EMAIL</label>
+            <input type="email" id="email" required placeholder="enter your e-mail"><br><br>
+            <label for="password">PASSWORD</label>
+            <input type="password" id="password" required placeholder="enter your password"><br><br>
+            <label for="confirmPassword">CONFIRM PASSWORD</label>
+            <input type="password" id="confirmPassword" required placeholder="confirm your password"><br><br>
+            <label for="gender">Gender</label>
+            <input type="radio" id="gender" name="gender" value="male">male
+            <input type="radio" id="gender" name="gender" value="female">female
+            <input type="radio" id="gender" name="gender" value="others">others<br><br>
+            <label for="hobbies">HOBBIES</label>
+            <input type="checkbox" id="hobbies" name="hobbies" value="Reading">Reading
+            <input type="checkbox" id="hobbies" name="hobbies" value="Sports">Sports
+            <input type="checkbox" id="hobbies" name="hobbies" value="Music">Music<br><br>
+            <label for="dob">D.O.B</label>
+            <input type="datetime-local" id="dob" required placeholder="enter your date of birth"><br><br>
+        <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+    <script>
+function checkPassword() {
+    let pass = document.getElementById("password").value;
+    let confirmPass = document.getElementById("confirmPassword").value;
+
+    if (pass !== confirmPass) {
+        alert("Passwords do not match ❌");
+        return false;
+    }
+    return true;
+}
+</script>
+</body>
+</html>

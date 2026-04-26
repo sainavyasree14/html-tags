@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service request form</title>
+</head>
+<body>
+    <h1 align="center">Service form</h1>
+    <form>
+        <label for="custname">Customer Name:</label>
+        <input type="text" id="custname" required placeholder="enter your name"><br><br>
+        <label for="contactno">Contact NO:</label>
+        <input type="tel" required placeholder="enter your phone no"><br><br>
+        <label  for="issue">Issue:</label>
+        <select required >
+            <option value="">--Select Issue--</option>
+            <option>Laptop Repair</option>
+            <option>Internet Issue</option>
+            <option>Software Problem</option>
+            <option>Hardware Problem</option>
+        </select><br><br>
+        <label for="description">Description:</label>
+        <textarea id="description">enter the type of issue</textarea><br><br>
+        <label for="priority">Priority:</label>
+        <input type="radio" id="priority" name="priority" value="low">Low
+        <input type="radio" id="priority" name="priority" value="medium">Medium
+        <input type="radio" id="priority" name="priority" value="high">High<br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

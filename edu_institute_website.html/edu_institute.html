@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABC Training Institute</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial;
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content: space-between;
+    padding:15px 40px;
+    background:#203a43;
+    color:white;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+/* Sections */
+.section{
+    display:none;
+    height:100vh;
+    padding:40px;
+    text-align:center;
+}
+
+/* Show active section */
+.active{
+    display:block;
+}
+
+/* Backgrounds */
+#home{
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url("https://www.univariety.com/blog/wp-content/uploads/2020/08/Blog-banner-image-1.jpg");
+    background-size:cover;
+    color:white;
+}
+
+#courses{
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url("https://c4.wallpaperflare.com/wallpaper/359/711/685/background-blue-color-course-wallpaper-preview.jpg");
+    background-size:cover;
+    color:white;
+}
+
+#schedule{
+    background: linear-gradient(to right, beige, lightblue);
+}
+
+#register{
+    background: linear-gradient(to right,#ffecd2,#fcb69f);
+}
+
+/* Courses layout */
+.course-box{
+    display:flex;
+    justify-content:space-around;
+}
+
+/* Table */
+table{
+    margin:auto;
+    border-collapse:collapse;
+    background:white;
+    height: 100px;
+}
+
+td,th{
+    padding:10px;
+    border:1px solid black;
+}
+
+
+input,select,textarea{
+    margin:10px;
+    padding:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+    <h2>ABC Training Institute</h2>
+    <ul>
+        <li><a onclick="showSection('home')">Home</a></li>
+        <li><a onclick="showSection('courses')">Courses</a></li>
+        <li><a onclick="showSection('schedule')">Schedule</a></li>
+        <li><a onclick="showSection('register')">Register</a></li>
+    </ul>
+</nav>
+
+<!-- Home -->
+<section id="home" class="section active">
+    <h1>Welcome to ABC Training Institute</h1>
+</section>
+
+<!-- Courses -->
+<section id="courses" class="section">
+    <h1>Courses</h1>
+    <div class="course-box">
+        <div>
+            <h3>Web Development</h3>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>ReactJs</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Programming Languages</h3>
+            <ul>
+                <li>Python</li>
+                <li>C++</li>
+                <li>C</li>
+                <li>Java</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Schedule -->
+<section id="schedule" class="section">
+    <h1>Schedule</h1>
+    <table>
+        <tr>
+            <th>Course</th>
+            <th>Trainer</th>
+            <th>Duration</th>
+            <th>Mode</th>
+        </tr>
+        <tr>
+            <td>HTML</td>
+            <td>Ashoka</td>
+            <td>2 weeks</td>
+            <td>Online</td>
+        </tr>
+        <tr>
+            <td>Java</td>
+            <td>Mr.Rahul</td>
+            <td>4 weeks</td>
+            <td>Offline</td>
+        </tr>
+        <tr>
+            <td>React Js</td>
+            <td>Ms.Anita</td>
+            <td>3 weeks</td>
+            <td>offline</td>
+        </tr>
+    </table>
+</section>
+
+<!-- Register -->
+<section id="register" class="section">
+    <h1>Register</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="enter your Name"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="enter your Email"><br>
+        <label for="phoneno">PhoneNo:</label>
+        <input type="number" id="phoneno" placeholder="enter your phoneno"><br>
+        <label for="course">Course</label>
+        <select name="choose course">
+            <option value="HTML">HTML</option>
+            <option value="Java">Java</option>
+            <option value="Css">Css</option>
+            <option value="ReactJs">ReactJs</option>
+        </select><br><br>
+        <label for="gender">Gender</label>
+        <input type="radio" id="gender" value="male">Male
+        <input type="radio" id="gender" value="female">Female
+        <input type="radio" id="gender" value="Others">Others<br><br>
+        <button>Submit</button>
+    </form>
+</section>
+<script>
+function showSection(id){
+    let sections = document.querySelectorAll('.section');
+    sections.forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
