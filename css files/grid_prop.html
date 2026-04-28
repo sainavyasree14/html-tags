@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 2px solid black;
+            padding: 30px;
+            border-radius: 10px;
+            background-color:rgb(239, 150, 87);
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        input{
+            width: 350px;
+            padding: 10px 0px;
+            border: 2px solid  brown;
+            background-color: cornsilk;
+        }
+        #button-container div{
+            border: 2px solid purple;
+            text-align: center;
+            padding: 10px;
+            border-radius: 14px;
+            background-color: antiquewhite;
+        }
+        #button-container{
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            row-gap: 5px;
+            column-gap: 5px;
+        }
+       /* if we wanted to merge - and - buttons then we use that 
+       #button-container div:nth-child(12){
+            grid-row-start: 4;
+            grid-column-start:4;
+            grid-row-end:6;
+        }*/
+        /* to merge sin and cos positions
+        #button-container div:nth-child(1){
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }*/
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <input type="number" readonly placeholder="0">
+        </div>
+        <div id="button-container">
+            <div>sin</div>
+            <div>tan</div>
+            <div>cos</div>
+            <div>AC</div>
+
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>/</div>
+
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>*</div>
+
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>-</div>
+
+            <div>=</div>
+            <div>0</div>
+            <div>%</div>
+            <div>+</div>
+        </div>
+    </div>
+</body>
+</html>

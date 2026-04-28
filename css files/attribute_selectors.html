@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img[alt^='i']{
+            height:250px;
+            width: 350px;
+            border-radius: 30px;
+        }
+        /*h1[id$='tag']{
+            color: plum;
+            background-color:bisque;
+            width:300px;
+        }*/
+        /*h1[id|='heading']{
+            color:orange;
+            background-color:blanchedalmond;
+            width: 300px;
+        }*/
+        h1[id*='h']{
+            color:purple;
+            background-color: beige;
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Haikyuu</h1>
+    <h1 id="heading-tag">Haikyuu</h1>
+    <h1 id="heading tag">Haikyuu</h1>
+    <img src="https://static0.cbrimages.com/wordpress/wp-content/uploads/2022/04/Shoyo-Hinata-from-Haikyuu!!.jpg" alt="image1"><br><br>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJeFu_I17nCJprULfX4q3umNKXYLmolqlEYA&s" alt="image2">
+</body>
+</html>

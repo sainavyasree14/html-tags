@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1::after{
+            content: " class";
+        }
+        label::after{
+            content:"*";
+            color: red;
+        }
+        #heading::before{
+            content: "🖥️CSS: ";
+        }
+        label:last-of-type::before{
+            content: "📩";
+        }
+        label:first-of-type::before{
+            content: "🧑";
+        }
+        form{
+            background-color:lavender;
+        }
+        input::placeholder{
+            background-color:lavenderblush;
+            color:mediumvioletred;
+            font-style: italic;
+            font-weight: bolder;
+        }
+        h2::first-letter{
+            color:chocolate;
+            font-size: 40px;
+            font-style: italic;
+            text-shadow: 2px 2px 2px black;
+        }
+        p::first-line{
+            color: darkgoldenrod;
+            background-color: antiquewhite;
+            font-style: italic;
+            font-weight: bold;
+        }
+        div::first-line{
+            color:lightseagreen;
+        }
+        li:first-child::marker{
+            content: "👉";
+        }
+        li:nth-child(2)::marker{
+            content: "-->";
+        }
+        li:nth-child(3)::marker,li:nth-child(4)::marker{
+            color:magenta;
+        }
+        li{
+            color:orangered;
+        }
+        div::selection{
+            color:brown;
+            background-color: violet;
+        }
+        p::selection{
+            color: dodgerblue;
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading" align="center">Welcome to day-6</h1>
+    <form>
+        <fieldset>
+            <h2>Register form</h2>
+            <label for="name">Firstname:</label>
+            <input type="text" id="name" placeholder="enter your first name"><br><br>
+            <label id="mail">E-mail:</label>
+            <input type="email" id="mail" placeholder="enter your e-mail"><br><br>
+            
+        </fieldset>
+    </form>
+
+    <ol>
+        <li>HinataShoyo</li>
+        <li>KageyamaTobio</li>
+        <li>TsukishimaKei</li>
+        <li>Yamaguchi</li>
+    </ol>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias inventore iusto dolorum et in nulla facilis quos. Non nostrum error eos dolorum, dolore beatae veritatis blanditiis, omnis repellendus consequuntur commodi.
+        <br><br>
+        Voluptatem deserunt iusto neque saepe numquam nobis tempora dolores, dignissimos dolor, doloremque ab fuga id quisquam et esse nisi modi, minima quibusdam dolore nulla vitae blanditiis! Commodi hic porro earum.<br><br>
+        Id aut impedit laboriosam aspernatur saepe quidem blanditiis necessitatibus dolorem quibusdam eos dolores unde harum, enim placeat obcaecati facere, consequatur hic, accusantium fugit corporis. Molestiae eveniet vitae magnam similique iure.
+    </p>
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi eius esse enim aut fuga. Illum praesentium cupiditate ex? Similique fugiat consequuntur modi animi vel aliquid molestias nam expedita delectus sapiente?<br><br>
+        Eveniet, minima maiores. Quia autem aut deleniti excepturi doloribus cupiditate similique natus sequi expedita dolor esse iusto hic voluptatum officia facilis, possimus culpa totam accusantium consequatur aliquid quaerat ut. Ipsa?
+    </div>
+</body>
+</html>

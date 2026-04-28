@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ol{
+            display:flex;
+            justify-content:space-evenly;
+            padding: 20px 0px;
+            align-items: center;
+            flex-direction:row;
+            background-color: lavender;
+            list-style: none;
+           flex-wrap: wrap;
+        }
+        nav{
+            position: sticky !important;
+            top:0 !important;
+            z-index: 2;
+        }
+        li{
+            color:blueviolet;
+            background-color:lavenderblush;
+            padding: 10px 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-style: italic;
+            text-shadow: 2px 2px 2px whitesmoke;
+            flex-grow: 1;
+            margin: 10px 30px;
+            text-align: center;
+        }
+        video{
+            width:100vw;
+            height:500px;
+        }
+        #electronic-devices{
+            padding-top: 90px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            position: relative;
+            bottom:300px;
+            backdrop-filter: blur(10px);
+            background-image: linear-gradient(lightblue,purple,lavender);
+        }
+        #electronic-devices>div{
+            height: 450px;
+            width: 350px;
+            border-top: 4px solid palevioletred;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            border-radius: 20px;
+            padding: 10px 20px;
+            background-color:rgb(246, 222, 246);
+            animation-name: moving;
+            animation-duration: 3s;
+        }
+        #electronic-devices-section{
+            position: relative;
+            bottom: 250px;
+            left: 40px;
+            z-index: 1;
+            font-size: 30px;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        #electronic-devices-section:hover{
+            text-decoration: underline;
+            text-shadow: 2px 2px 2px beige;
+            color: purple;
+            cursor: pointer;
+            transform:scaley(1.4)
+        }
+        #product-card img{
+            width:250px;
+             height:180px;
+             border-radius: 10px; 
+
+        }
+        #product-card img:hover{
+            transform: skew(10deg);
+            box-shadow: 8px 8px 9px rosybrown;
+        }
+        .project-info h4{
+            color:rgb(161, 109, 161) ;
+            margin-left: 25px;
+            font-style: normal;
+            font-size: 20px;
+        }
+        .project-info p{
+            color:purple ;
+            margin-left: 25px;
+            font-style: normal;
+        }
+        .btn-container>button{
+            padding: 10px 20px;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border-radius: 6px;
+            border:none;
+            margin: 10px 20px;
+        }
+        .btn-container>button:first-child{
+            background-color:rgb(192, 242, 192);
+        }
+        .btn-container>button:last-child{
+            background-color:rgb(237, 159, 159);
+        }
+        h1{
+            position: absolute;
+            top:150px;
+            left: 450px;
+            backdrop-filter: blur(10px);
+            text-shadow: 3px 3px 3px white;
+            padding: 10px 10px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px violet;
+            animation-name: scaling;
+            animation-duration: 3s;
+        }
+        aside{
+            position: fixed;
+            padding: 30px 10px;
+            display: inline-flex;
+            flex-direction: column;
+            z-index:1;
+            top: 40%;
+            margin-left: 10px;
+            border-radius:15%;
+            height: 250px;
+            justify-content: space-evenly;
+            background-image: radial-gradient(transparent,rgb(240, 155, 184));
+         }
+         aside img:hover{
+            cursor: pointer;
+            box-shadow: 5px 5px 9px whitesmoke;
+            transform: translatex(10px);
+         }
+        aside img{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+        @keyframes scaling{
+            0%{
+                transform: scale(0);
+            } 
+            100%{
+                transform: scale(1);
+            }
+
+        }
+        @keyframes moving{
+            from{
+                transform: translatey(200px);
+            }
+            to{
+                transform:translateY(0px) ;
+            }
+        }
+        body{
+            background-color: papayawhip;
+            animation-name: bgcolorchange;
+            animation-duration: 6s;
+            animation-iteration-count:4px;
+            animation-delay: 5s;
+        }
+        @keyframes bgcolorchange{
+            0%{
+                background-color:darksalmon
+            }
+            10%{
+                background-color: dodgerblue;
+            }
+            20%{
+                background-color: hotpink;
+            }
+            30%{
+                background-color: lavenderblush;
+            }
+            40%{
+                background-color: lemonchiffon;
+            }
+             50%{
+                background-color:mediumslateblue;
+            }
+             60%{
+                background-color:lightyellow;
+            }
+             70%{
+                background-color:linen
+            }
+             80%{
+                background-color:snow
+            }
+             90%{
+                background-color:peru
+            }
+             100%{
+                background-color:orchid
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ol>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+            <li>Help</li>
+            <li>Login</li>
+        </ol>
+    </nav>
+    <main>
+        <section id="background video">
+            <video src="./24114-340421422.mp4" loop autoplay ></video>
+        </section>
+        <section>
+            <h1>Welcome to Mart</h1>
+        </section>
+         <h2 id="electronic-devices-section">Electronic Devices:</h2>
+        <section id="electronic-devices">
+            <div id="product-card">
+                <img src="https://images.livemint.com/img/2024/07/21/600x338/SamsungGalaxyBook4Pro2_1721589785656_1721589810511.jpg"  alt="">
+                <div class="project-info">
+                    <h4>Name:Laptop</h4>
+                    <h4>Price:₹60000</h4>
+                    <h4>Ratings:⭐⭐⭐⭐</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolorem natus repellendus magni aspernatur</p>
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add Card</button>
+                </div>
+            </div>
+             <div id="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdcBwsscX8G1RS9OLDwSrlZ1jME2blZDHsrw&s"  alt="">
+                <div class="project-info">
+                    <h4>Name:Laptop</h4>
+                    <h4>Price:₹65000</h4>
+                    <h4>Ratings:⭐⭐⭐⭐</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolorem natus repellendus magni aspernatur</p>
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add Card</button>
+                </div>
+            </div>
+             <div id="product-card">
+                <img src="https://m.media-amazon.com/images/I/7109i1hDaNS.jpg"  alt="">
+                <div class="project-info">
+                    <h4>Name:Laptop</h4>
+                    <h4>Price:₹72000</h4>
+                    <h4>Ratings:⭐⭐⭐⭐</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolorem natus repellendus magni aspernatur</p>
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add Card</button>
+                </div>
+            </div>
+             <div id="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqRKRzBnbtNEo5Ve_eck5hduIuX54Eff2CFw&s"  alt="">
+                <div class="project-info">
+                    <h4>Name:Laptop</h4>
+                    <h4>Price:₹90000</h4>
+                    <h4>Ratings:⭐⭐⭐⭐⭐</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolorem natus repellendus magni aspernatur</p>
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add Card</button>
+                </div>
+            </div>
+             <div id="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE839oWQw2zBhoQkjV5ZHJwY6-lgFrhJZ6vw&s"  alt="">
+                <div class="project-info">
+                    <h4>Name:Laptop</h4>
+                    <h4>Price:₹75000</h4>
+                    <h4>Ratings:⭐⭐⭐⭐</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolorem natus repellendus magni aspernatur</p>
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add Card</button>
+                </div>
+            </div>
+             <div id="product-card">
+                <img src="https://www.cnet.com/a/img/resize/4e397aa960b2fb734254588a09d26bcbe6c2355b/hub/2023/01/02/63497d7c-c148-4214-8d69-347935f3f419/dell-g15-g16-ces-2023-03.jpg?auto=webp&fit=crop&height=1200&width=1200"  alt="">
+                <div class="project-info">
+                    <h4>Name:Laptop</h4>
+                    <h4>Price:₹88000</h4>
+                    <h4>Ratings:⭐⭐⭐⭐⭐</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolorem natus repellendus magni aspernatur</p>
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add Card</button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <aside>
+                <a href="https://www.youtube.com/" alt=""><img src="https://www.svgrepo.com/show/243085/youtube.svg" alt=""></a>
+                <a href="https://www.linkedin.com/login"><img src="https://www.svgrepo.com/show/448234/linkedin.svg" alt=""></a>
+                <a href="https://x.com/"><img src="https://www.svgrepo.com/show/489937/twitter.svg" alt=""></a>
+                <a href="https://www.instagram.com/"><img src="https://www.svgrepo.com/show/452231/instagram.svg" alt=""></a>
+            </aside>
+        </section>
+    </main>
+</body>
+</html>
