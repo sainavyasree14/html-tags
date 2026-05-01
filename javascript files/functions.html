@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Script>
+        //anonymous functon
+        let funeg=function(){
+            console.log("this is functional  expression");
+        }
+        funeg()
+        let userdetails=function(username,password){
+         console.log("this is functional expression");
+         return username+" "+password
+         return "hello"
+        }
+        let result=userdetails('hinata@123', 'shoyo@234');
+        console.log(userdetails('kageyama@123', 'tobio@234'));
+        console.log(result);
+        //normal function
+        function employeedetails(name,role,salary){
+            //console.log("this is normal function..");
+            //console.log("name:",name);
+            //console.log("role:",role);
+            //console.log("salary:",salary);
+            return[name,role,salary]
+        }
+        console.log(employeedetails("tobio","setter","59000"));
+        console.log(employeedetails("shoyo","middle blocker","61000"));
+        console.log(employeedetails("asahi","ace","65000"));
+        
+        //immediate invoking function
+        (function () {
+            let apikey="slfksfk989kaSJKDAKJFNjknfjfsdkjksjdi9io99i9i"
+            console.log("this is immediate invoking function");
+            return apikey;
+        })
+        ()
+        let a=10;
+
+        //arrow function
+        let arrowfun=()=>console.log("arrow function");
+        arrowfun()
+        arrowfun()
+        let test=(skills,name)=>{
+            let a=90;
+            let b=40;
+            console.log(a,b);
+            console.log("name:",name,"skills:",skills);
+        }
+        test(["setter","middle blocker","ace","spiker","libero"],"karasuno player");
+
+        //nested functions
+        /*function outerfun(){
+            function innerfun(){
+                console.log("inner function");
+            }
+            console.log("outer function");
+            innerfun()
+        }
+        outerfun()*/
+        /*function outerfun(m,n){
+                console.log("outer function");
+                return function innerfun(){
+                    console.log(m,n);
+                    console.log("inner function");
+                }
+        }
+        let result1=outerfun(90,40)
+        result1()*/
+        function outerfun(count){
+                console.log("outer function");
+                return function innerfun(){
+                    return count++;
+                }
+        }
+        let result1=outerfun(1)
+        console.log(result1());
+        console.log(result1());
+        console.log(result1());
+
+        //higher order function
+        function homepage(){
+            console.log("home page");
+            
+        }
+        function loginpage(){
+            console.log("login page logic");
+            
+        }
+        function registerpage(){
+            console.log("register page logic");
+            
+        }
+        homepage(registerpage(),loginpage()) /* homepage is higher order function and register,login page are callback function */
+        function display(fun1,fun2){
+            fun1();
+            fun2();
+        }
+        display(()=>{
+            console.log("1st callback function");
+        },()=>{
+            console.log("2nd order function");
+        })  /* display is higher order function*/
+       
+        //generator  function
+        function*generator() {
+            yield 10;
+            yield 20;
+            yield 60;
+            console.log("this is generator function");
+        }
+        let nextgen=generator();
+        //nextgen.next()
+        //generator().next()
+        console.log(nextgen.next().done);
+        console.log(nextgen.next().value);
+        console.log(nextgen.next());
+        console.log(nextgen.next().value);
+        while(!nextgen.next().done){
+            console.log(nextgen.next())
+        }
+
+    </Script>
+</body>
+</html>

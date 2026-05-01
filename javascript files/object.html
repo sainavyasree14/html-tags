@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj={
+            name:"shoyo",
+            rollno:'hin10',
+            skills:['middle blocker','spiker','ace'],
+            address:{
+                city:"japan",
+                zipcode:45890
+            }
+        }
+        console.log(obj);
+        console.log(obj.name);
+        console.log(obj.address.city);
+        console.log(obj.skills[0]);
+        console.log(Object.keys(obj));
+        console.log(Object.values(obj));
+        console.log(Object.entries(obj));
+
+        obj.name="hinatashoyo";
+        obj.course='volleyall player';
+        obj.school='karasuno'
+        delete obj.address;
+        console.log(obj);
+
+        Object.seal(obj)
+        console.log(Object.isSealed())
+        delete obj.name//not possible
+        obj.rollno="hin206"//possible
+        obj.age=19//not possible
+        console.log(obj)
+
+        Object.freeze(obj);
+        console.log(Object.isFrozen())
+        obj.rollno="hin209"//not possible
+        obj.age=19//not possible
+        console.log(obj)
+
+      /* const obj1= new Object({
+            username:"hinata",
+            password:"shoyo@345",
+        })
+        console.log(obj1)*/
+    </script>
+</body>
+</html>

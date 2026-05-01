@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auth Project</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background-image: linear-gradient(lavender,lightblue,pink,violet,purple);
+        }
+
+        .container {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            background-color:rgb(230, 178, 230);
+            padding: 25px;
+            border-radius: 10px;
+            width: 320px;
+            box-shadow:10px solid white;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            background-color: rgb(94, 220, 94);
+            align-items: center;
+        }
+        nav {
+            background: #333;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="registerPage" class="container" style="display:flex;">
+    <div class="box">
+        <h2>Register</h2>
+        <label for="name"></label>
+        <input type="text" id="name" placeholder="Full Name">
+        <label for="email"></label>
+        <input type="email" id="email" placeholder="Email">
+        <label for="phone"></label>
+        <input type="number" id="phone" placeholder="Phone">
+        <label for="regUsername"></label>
+        <input type="text" id="regUsername" placeholder="Username">
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob"><br><br>
+        <select id="gender">
+            <option value="">Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+        </select><br><br>
+        <textarea id="address" placeholder="Address"></textarea>
+        <label for="regPassword"></label>
+        <input type="password" id="regPassword" placeholder="Password">
+        <button type="button" onclick="register()">Submit</button>
+    </div>
+</div>
+<!-- LOGIN -->
+<div id="loginPage" class="container">
+    <div class="box">
+        <h2>Login</h2>
+
+        <input type="text" id="loginUsername" placeholder="Username">
+        <div class="error" id="loginUserError"></div>
+
+        <input type="password" id="loginPassword" placeholder="Password">
+        <div class="error" id="loginPassError"></div>
+
+        <button class="green" onclick="login()">Login</button>
+        <button class="red" onclick="clearData()">Cancel</button>
+    </div>
+</div>
+
+<!-- HOME -->
+<div id="homePage">
+    <nav>
+        <h3>My Website</h3>
+        <button class="red" onclick="logout()">Logout</button>
+    </nav>
+
+    <div class="content">
+        <h2 id="welcomeText">Welcome!</h2>
+        <p>This is your landing page.</p>
+    </div>
+</div>
+
+<script>
+
+// show pages
+function showPage(pageId) {
+    document.getElementById("registerPage").style.display = "none";
+    document.getElementById("loginPage").style.display = "none";
+    document.getElementById("homePage").style.display = "none";
+
+    if (pageId === "homePage") {
+        document.getElementById(pageId).style.display = "block";
+    } else {
+        document.getElementById(pageId).style.display = "flex";
+    }
+}
+
+// clear errors
+function clearErrors() {
+    let errors = document.querySelectorAll(".error");
+    errors.forEach(e => e.innerText = "");
+}
+
+// REGISTER
+function register() {
+
+    clearErrors();
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let username = document.getElementById("regUsername").value.trim();
+    let password = document.getElementById("regPassword").value.trim();
+
+    let valid = true;
+
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    let phonePattern = /^[0-9]{10}$/;
+
+    if (!name) {
+        document.getElementById("nameError").innerText = "Name is required";
+        valid = false;
+    }
+
+    if (!email.match(emailPattern)) {
+        document.getElementById("emailError").innerText = "Invalid email format";
+        valid = false;
+    }
+
+    if (!phone.match(phonePattern)) {
+        document.getElementById("phoneError").innerText = "Phone must be 10 digits";
+        valid = false;
+    }
+
+    if (!username) {
+        document.getElementById("userError").innerText = "Username required";
+        valid = false;
+    }
+
+    if (password.length < 6) {
+        document.getElementById("passError").innerText = "Min 6 characters";
+        valid = false;
+    }
+
+    if (!valid) return;
+
+    let user = { name, email, phone, username, password };
+    localStorage.setItem("user", JSON.stringify(user));
+
+    showPage("loginPage");
+}
+
+// LOGIN
+function login() {
+
+    clearErrors();
+
+    let storedUser = JSON.parse(localStorage.getItem("user"));
+
+    let username = document.getElementById("loginUsername").value.trim();
+    let password = document.getElementById("loginPassword").value.trim();
+
+    let valid = true;
+
+    if (!username) {
+        document.getElementById("loginUserError").innerText = "Enter username";
+        valid = false;
+    }
+
+    if (!password) {
+        document.getElementById("loginPassError").innerText = "Enter password";
+        valid = false;
+    }
+
+    if (!valid) return;
+
+    // store typed values
+    localStorage.setItem("typedUsername", username);
+    localStorage.setItem("typedPassword", password);
+
+    if (storedUser && username === storedUser.username && password === storedUser.password) {
+        document.getElementById("welcomeText").innerText = "Welcome " + storedUser.name;
+        showPage("homePage");
+    } else {
+        document.getElementById("loginPassError").innerText = "Invalid credentials";
+    }
+}
+
+// CLEAR LOGIN
+function clearData() {
+    document.getElementById("loginUsername").value = "";
+    document.getElementById("loginPassword").value = "";
+    clearErrors();
+}
+
+// LOGOUT
+function logout() {
+    showPage("loginPage");
+}
+
+// start
+showPage("registerPage");
+
+</script>
+
+</body>
+</html>

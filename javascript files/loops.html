@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //for loop
+        for (let i=10;i>=1;i=i-2){
+            console.log(i);
+            //i++; we can give i++ here too
+        }
+        console.log("***************************");
+        //while loop
+        let count=0;
+        while(count<=10){
+            console.log(`2x${count}=`,2*count);
+            count++;
+        }
+       let num=9603435744;
+       /*console.log(Math.floor(25.9));
+       console.log(Math.round(50.6));
+       console.log(Math.random());
+       console.log(Math.ceil(50.1));*/
+       while(num!=0){
+        let rem=Math.floor(num%10);
+        if(rem%2==0){
+            console.log(rem);
+        }
+        num=Math.floor(num/10);
+       }
+       console.log("***************************");
+       //do while loop
+       let j=1;
+       do{
+        console.log(j);
+        j++;
+       } while(j==5); //while(j<=5) then o/p is 1,2,3,4,5
+       console.log("***************************");
+       //for in loop
+       let str="hinatashoyo"
+       let arr=[10,20,30,40]
+       for (index in str){
+        console.log(index);
+       }
+       for(arrindex in arr){
+        console.log(arrindex);
+       }
+       console.log("***************************");
+       //for of loop
+       for (val of arr){
+        console.log(val);
+       }
+       for(sval of str){
+        console.log(sval);
+       }
+       console.log("***************************");
+       //for each loop
+       arr.forEach((v,i,a)=>{ //v,i,a means value,index and array
+        console.log(v,i,a)
+       })
+       console.log("***************************");
+       //for each loop
+       arr.forEach((_,i,a)=>{ //v,i,a means value,index and array
+        console.log(i,a)
+       })
+    </script>
+</body>
+</html>

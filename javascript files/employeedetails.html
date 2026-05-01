@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        tbody tr:nth-child(odd){
+            background-color:rgb(205, 227, 234);
+        }
+        tbody tr:nth-child(even){
+            background-color:rgb(249, 204, 211);
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input{
+            margin-bottom: 40px;
+            background-color:rgb(195, 219, 220);
+        }
+        button{
+            background-color:lavender
+        }
+        h1{
+            color:purple;
+        }
+    </style>
+</head>
+<body>
+    <h1>Emp Details</h1>
+    <input type="search" id="input" placeholder="search employee's"><br>
+    <table  border="1" cellspacing="0" cellpadding="10">
+        <thead>
+            <tr bgcolor="violet">
+                <th>Name</th>
+                <th>Role</th>
+                <th>Salary</th>
+                <th>Address</th>
+                <th>Phone no</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr >
+                <td>Shoyo</td>
+                <td>Middle Blocker</td>
+                <td>70000</td>
+                <td>Japan</td>
+                <td>9803492902</td>
+            </tr>
+            <tr>
+               <td>Tobio</td>
+               <td>Setter</td>
+               <td>71000</td>
+               <td>shibuya</td>
+               <td>9876543678</td>
+            </tr>
+            <tr>
+               <td>Daichi</td>
+               <td>Captain</td>
+               <td>80000</td>
+               <td>vizag</td>
+               <td>9567890543</td>
+            </tr>
+            <tr>
+               <td>Nishinoya</td>
+               <td>Libero</td>
+               <td>75000</td>
+               <td>switzerland</td>
+               <td>9907676543</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatibus illo nobis similique? Debitis blanditiis ipsum, est facere spernatur illum?<br><br>
+    </p>
+    <button onclick="disappearparagraph()">click here</button><br><br>
+    <script>
+        function disappearparagraph(){
+            let para=document.querySelector("p");
+            para.style.display=(para.style.display=="block")? "none":"block";
+        }
+        let rows=document.querySelectorAll("tbody tr");//rows means 4 values
+        let input=document.querySelector("input");
+        
+        input.addEventListener('keyup',()=>{
+            let inputText=input.value.toLowerCase()
+            rows.forEach((row)=>{ //here row mean 1st or single row
+            let rowdata=row.textContent;
+            let result=rowdata.toLowerCase().includes(inputText);
+            row.style.display=result?" ": "none"
+        })
+        })
+        /*input.onkeyup=()=>{
+            console.log(input.value)
+        }*/
+        
+    </script>
+</body>
+</html>

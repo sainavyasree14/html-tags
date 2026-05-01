@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //literal way
+        let arr=[10,20,30,30,50];
+        let arr1=['java',null,50,3.5,true];
+        console.table(arr);
+        console.log(arr1);
+        console.log(arr[0]);
+
+        //new keyword
+        let arr2=new Array(10,20,80,90);
+        console.table(arr2);
+        console.log(arr2[6]);
+
+        //inbuilt methods or inbuilt functions
+        let samplearr=[10,20,30];
+        console.log(samplearr);
+        samplearr.push(20);
+        console.log(samplearr);
+        samplearr.pop();
+        console.log(samplearr);
+        samplearr.unshift(40);
+        console.log(samplearr);
+        samplearr.shift();
+        samplearr.push(40,50,60)
+        console.log(samplearr);
+        console.log(samplearr.splice(1,0,"javascript"));
+        console.log(samplearr);
+        console.log(samplearr.slice(0,4));
+        console.log(samplearr);
+        console.log(samplearr.reverse());
+        console.log(samplearr.toString());
+
+        //ip: js is scripting language
+        //op 1: language scripting is js
+        // op 2: egaugnal gnitpircs si js
+        let input1="javascript is scripting language"
+        console.log(input1);
+        console.log(input1.split(" ").reverse().toString().replaceAll(","," "));
+        console.log(input1.split("").reverse().toString().replaceAll(",",""));
+    </script>
+</body>
+</html>

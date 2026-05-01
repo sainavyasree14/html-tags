@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //let variable eg 
+        let str;//variable declaration
+        str=90;//variable initialization
+        console.log(str);//variable utilization
+        let num=10;
+        num="java";
+        //let str
+        console.log(num);
+        /*console.log(z);
+        let z=10; -- hoisting is not possible shows error cause we cannot utilize variables before declaration */
+        
+        function test(){
+            let s=10;
+            console.log(p);
+        }
+        test()
+        console.log(this);
+        //console.log(s);//can't access outside the block
+
+        //var variables eg
+        var arr=10;
+        arr=40;
+        var arr="nodejs";
+        console.log(arr);
+        console.log(this);
+        //hoisting is also possible in var
+        var p=10;
+        /*var password="admin@234"*/
+
+        //const variables eg
+        const username="shoyo@edu.in"
+        /*username="sample"; shows error cant reinitialize*/
+        console.log(username);
+        /*const d;
+        d=10; not possible*/
+    </script>
+</body>
+</html

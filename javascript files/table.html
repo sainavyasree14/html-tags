@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <script>
+        let b1=document.getElementById("body")
+        let t1=document.createElement("table");
+        let tr1=document.createElement("tr");
+        let tr2=document.createElement("tr");
+        let td1=document.createElement('td')
+        let td2=document.createElement('td')
+        let td3=document.createElement('td')
+        let td4=document.createElement('td')
+        t1.appendChild(tr1)
+        t1.appendChild(tr2)
+        tr1.appendChild(td1)
+        tr1.appendChild(td2)
+        tr2.appendChild(td3)
+        tr2.appendChild(td4)
+        td1.innerHTML='<img src="https:/a.storyblok.com/f/178900/960x540/6e6bcda041/demon-slayer.jpg/m/filters:quality(95)format(webp)" height="150px" width="200px" alt="">'
+        //td1.innerHTML="<img src='https:/a.storyblok.com/f/178900/960x540/6e6bcda041/demon-slayer.jpg/m/filters:quality(95)format(webp)' height="150px" width="200px" alt="">"
+        td2.innerHTML="<h1>World</h1>"
+        td3.textContent=102
+        td4.innerHTML='<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTevdwp5hcYL1W1FhZu_R5jwrccjRjyzbMnVw&s" height="150px" alt="">'
+        t1.border=1;
+        t1.cellSpacing=0;
+        t1.cellPadding=10;
+        b1.appendChild(t1)
+        console.log(t1);
+        tr2.removeChild(td3)
+        console.log(b1);
+    </script>
+</body>
+</html>
