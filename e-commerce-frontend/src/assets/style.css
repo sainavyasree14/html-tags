@@ -1,0 +1,47 @@
+/*nav stylings*/
+#login-btn{
+    color:plum;
+    text-decoration:none;
+    font-weight:bold;
+    font-style:italic;
+}
+#login-btn{
+    margin-right: 20px;
+}
+#nav-container{
+    background-image: linear-gradient(rgb(246, 200, 246),rgb(230, 230, 241),rgb(237, 168, 237));
+}
+#greeting-btn{
+    border:none;
+    position:fixed;
+    z-index:2;
+    border-radius: 50px;
+    padding:9px;
+    top:150px;
+    background-color:blanchedalmond;
+    font-style: italic;
+}
+#greeting-btn:hover{
+    background-color: bisque;
+    text-shadow:3px 3px 3px lightblue ;
+    box-shadow:purple;
+
+}
+/*register form stylings*/
+#form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(plum,pink,lightblue);
+}
+#form-container form{
+    border:1px solid purple;
+    padding: 20px;
+    border-radius: 8px ;
+    background-color:rgb(229, 174, 203);
+    box-shadow: 2px 2px 2px 2px whitesmoke;
+}
+#form-container label{
+    font-weight: bold;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather App</title>
+
+<style>
+body {
+    font-family: Arial;
+    background-image: linear-gradient(rgb(150, 150, 208),lightblue,white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: azure;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+}
+
+input {
+    padding: 10px;
+    width: 70%;
+    border-radius: 8px;
+    border: 1px solid whitesmoke;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background: #62a8e6;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.weather {
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Weather App</h2>
+
+    <input type="text" id="city" placeholder="Enter city">
+    <button onclick="getWeather()">Search</button>
+
+    <div class="weather" id="result"></div>
+</div>
+
+<script>
+function getWeather() {
+    let city = document.getElementById("city").value;
+
+    fetch(`https://api.weatherapi.com/v1/current.json?key=61962479962d4c0ab0a160437262102&q=${city}&aqi=no`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+
+        let output = `
+            <h3>${data.location.name}, ${data.location.country}</h3>
+            <p>🌡️ Temp: ${data.current.temp_c} °C</p>
+            <p>🌥️ Condition: ${data.current.condition.text}</p>
+            <p>💧 Humidity: ${data.current.humidity}%</p>
+            <p>💨 Wind: ${data.current.wind_kph} kph</p>
+        `;
+
+        document.getElementById("result").innerHTML = output;
+    })
+    .catch(error => {
+        console.log("Error:", error);
+        document.getElementById("result").innerHTML = "City not found ❌";
+    });
+}
+</script>
+
+</body>
+</html>
