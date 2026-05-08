@@ -20,8 +20,8 @@ function Register() {
 
     console.log(form);
 
-    toast.success("Registered Successfully 🎉");
-
+    toast.success("Registered Successfully ");
+    /*navigate is used to navigate from one component to other*/
     setTimeout(() => {
       navigate("/home");
     }, 1500);
@@ -57,6 +57,7 @@ function Register() {
         />
 
         <button className="btn btn-primary">Register</button>
+        <button className="btn btn-primary">Cancel</button>
       </form>
 
       <p className="mt-3">

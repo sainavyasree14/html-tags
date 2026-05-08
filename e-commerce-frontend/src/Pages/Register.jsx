@@ -14,6 +14,7 @@ function register() {
     password:"",
     address:"",
     city:"",
+    usertype:"user",
     state:"",
     zipcode:"",
   });
@@ -39,9 +40,19 @@ function register() {
         </Form.Group>
       </Row>
       <Row className="mb-3">
+
         <Form.Group as={Col} controlId="formGridEmail">
           <Form.Label>Email</Form.Label>
           <Form.Control type="email" required placeholder="Enter email" />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridusertype">
+          <Form.Label>usertype</Form.Label>
+          <Form.Select name="usertype" onchange={handlechange}>
+            <option>choose user type</option>
+            <option value="user">user</option>
+            <option value="admin">admin</option>
+          </Form.Select>
         </Form.Group>
 
         <Form.Group as={Col} controlId="formGridPassword">
